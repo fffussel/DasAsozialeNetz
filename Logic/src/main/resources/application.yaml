@@ -1,0 +1,28 @@
+server:
+  port: ${PORT:8081}
+  address: 0.0.0.0
+
+spring:
+  application:
+    name: Logic
+  config:
+    import: optional:classpath:db.properties
+  datasource:
+    url: jdbc:postgresql://localhost:${db.port:5432}/${db.name:wavodb}
+    driver-class-name: org.postgresql.Driver
+    username: ${db.username:postgres}
+    password: ${db.password:8420}
+  jpa:
+    hibernate:
+      ddl-auto: update
+  sql:
+    init:
+      mode: always
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+jwt:
+  secret:
+    key: ${JWT_SECRET_KEY:fc8d65b91a4a004de1826adb893417ad627717998d96219f2738ac291e3818ca}

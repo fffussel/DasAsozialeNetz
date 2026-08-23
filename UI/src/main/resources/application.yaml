@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: UI
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+vaadin:
+  launch-browser: true
+
+logic:
+  service:
+    url: ${LOGIC_SERVICE_URL:http://localhost:8081}
+  public:
+    url: ${LOGIC_PUBLIC_URL:http://localhost:8081}
